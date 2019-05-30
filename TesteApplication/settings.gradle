@@ -1,0 +1,9 @@
+include ':app'
+def sdk = '../TesteLibrary'
+if (file(sdk).exists()) {
+    includeBuild(sdk) {
+        dependencySubstitution {
+            substitute module('br.com.drbf17:libraryteste:1.0.0') with project(':libraryteste')
+        }
+    }
+}
